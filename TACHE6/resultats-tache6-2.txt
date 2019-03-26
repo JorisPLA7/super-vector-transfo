@@ -1,0 +1,35 @@
+image_poly_tache6.pbm
+nb contours : 3
+nb segments init : 488
+nb segments simplif d=1.0 : 67
+nb segments simplif d=2.0 : 43
+
+elephant-gotlib.pbm
+nb contours : 313
+nb segments init : 115564
+nb segments simplif d=1.0 : 13150
+nb segments simplif d=2.0 : 4280
+
+goudyini-A.pbm
+nb contours : 258
+nb segments init : 73444
+nb segments simplif d=1.0 : 5290
+nb segments simplif d=2.0 : 2713
+
+JoaquimHock-LesArbres.pbm
+nb contours : 543
+nb segments init : 231285
+nb segments simplif d=1.0 : 26484
+nb segments simplif d=2.0 : 13087
+
+cheval.pbm
+nb contours : 59
+nb segments init : 32002
+nb segments simplif d=1.0 : 3147
+nb segments simplif d=2.0 : 1381
+
+papillon2.pbm
+nb contours : 140
+nb segments init : 18212
+nb segments simplif d=1.0 : 1908
+nb segments simplif d=2.0 : 1035

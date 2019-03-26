@@ -1,0 +1,31 @@
+Fichier pbm_images/chat.pbm, taille L 250 * H 140 comporte un contour en 881 points.
+Fichier pbm_images/coq.pbm, taille L 700 * H 720 comporte un contour en 5387 points.
+Fichier pbm_images/elephant.pbm, taille L 800 * H 700 comporte un contour en 5345 points.
+Fichier pbm_images/gymnaste.pbm, taille L 1056 * H 1647 comporte un contour en 8785 points.
+Fichier pbm_images/image_ex_poly.pbm, taille L 4 * H 4 comporte un contour en 19 points.
+Fichier pbm_images/labyrinthe.pbm, taille L 221 * H 201 comporte un contour en 44001 points.
+Fichier pbm_images/lettreZ.pbm, taille L 600 * H 1029 comporte un contour en 9397 points.
+Fichier pbm_images/map401.pbm, taille L 830 * H 300 comporte un contour en 8073 points.
+Fichier pbm_images/tete.pbm, taille L 1252 * H 1252 comporte un contour en 8137 points.
+Fichier pbm_images/chat.pbm, taille L 250 * H 140 comporte un contour en 881 points.
+Fichier pbm_images/coq.pbm, taille L 700 * H 720 comporte un contour en 5387 points.
+Fichier pbm_images/elephant.pbm, taille L 800 * H 700 comporte un contour en 5345 points.
+Fichier pbm_images/gymnaste.pbm, taille L 1056 * H 1647 comporte un contour en 8785 points.
+Fichier pbm_images/image_ex_poly.pbm, taille L 4 * H 4 comporte un contour en 19 points.
+Fichier pbm_images/labyrinthe.pbm, taille L 221 * H 201 comporte un contour en 44001 points.
+Fichier pbm_images/lettreZ.pbm, taille L 600 * H 1029 comporte un contour en 9397 points.
+Fichier pbm_images/map401.pbm, taille L 830 * H 300 comporte un contour en 8073 points.
+Fichier pbm_images/tete.pbm, taille L 1252 * H 1252 comporte un contour en 8137 points.
+Fichier ../TACHE5/tests/Simon.pbm, taille L 7 * H 9 comporte un contour en 9 points.
+1
+
+9
+ 3.0 6.0 
+ 4.0 6.0 
+ 5.0 6.0 
+ 5.0 7.0 
+ 5.0 8.0 
+ 4.0 8.0 
+ 3.0 8.0 
+ 3.0 7.0 
+ 3.0 6.0 
