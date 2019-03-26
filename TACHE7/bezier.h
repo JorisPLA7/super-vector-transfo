@@ -18,6 +18,7 @@ typedef struct Bezier3_struct {
 	Point c3;
 } Bezier3;
 
+double distance_point_bezier2(Point P,Bezier2 B,double ti);
 Point calcul_point_bezier2(Bezier2 b,double t);
 Point calcul_point_bezier3(Bezier3 b,double t);
 Bezier3 conversion_b2_b3(Bezier2 b);

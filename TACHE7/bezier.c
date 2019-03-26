@@ -1,5 +1,8 @@
 #include "bezier.h"
 
+double distance_point_bezier2(Point P,Bezier2 B,double ti){
+return 1.;
+}
 
 Point calcul_point_bezier2(Bezier2 b,double t){
 	Point p;

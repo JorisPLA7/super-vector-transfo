@@ -37,7 +37,7 @@ tab_bezier2 simplification_douglas_peucker_bezier2(TTV_Point C,int j1, int j2, d
 	for (int j=j1+1;j1<=j2;j1++){
 		int i=j-j1;
 		double ti=(double)i/(double)n;
-		double dj=distance_point_bezier2(C[j],B,ti);
+		double dj=distance_point_bezier2(C.tab[j],B,ti);
 		if (dmax<dj){
 			dmax=dj;
 			k=j;
@@ -45,7 +45,7 @@ tab_bezier2 simplification_douglas_peucker_bezier2(TTV_Point C,int j1, int j2, d
 	}
 
 	if (dmax<d){
-		L.tab={B};
+		L.tab[0]=B;
 		L.n=1;
 	}
 	else {
@@ -53,7 +53,7 @@ tab_bezier2 simplification_douglas_peucker_bezier2(TTV_Point C,int j1, int j2, d
 		tab_bezier2 L2=creer_tab_bezier2();
 		L1=simplification_douglas_peucker_bezier2(C,j1,k,d);
 		L2=simplification_douglas_peucker_bezier2(C,k,j2,d);
-		L=concatener_bezier2_struct(tab_bezier2 L1, tab_bezier2 L2)
+		L=concatener_bezier2_struct(L1,L2);
 	}
-	L=simplification_douglas_peucker_bezier2(C,j1,j2,d);
+	return L;
 }
