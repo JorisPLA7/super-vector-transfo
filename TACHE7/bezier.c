@@ -1,9 +1,36 @@
 #include "bezier.h"
 
 double distance_point_bezier2(Point P,Bezier2 B,double ti){
-	//approx bezier 2
-	//distance point P avec tout les points
-	//retourner le minimum
+	
+	Point b_point = calcul_point_bezier2(B, 0.);
+	double minimum = distance_point(P, b_point);
+	double valeur_courante = minimum;
+	for(double step=0; step<=1; step+=ti) {
+		valeur_courante = distance_point(P, calcul_point_bezier2(B, step));
+		
+		if (valeur_courante < minimum){
+			minimum = valeur_courante;
+		}
+
+	}
+	return minimum;
+}
+
+
+double distance_point_bezier3(Point P,Bezier3 B,double ti){
+	
+	Point b_point = calcul_point_bezier3(B, 0.);
+	double minimum = distance_point(P, b_point);
+	double valeur_courante = minimum;
+	for(double step=0; step<=1; step+=ti) {
+		valeur_courante = distance_point(P, calcul_point_bezier3(B, step));
+		
+		if (valeur_courante < minimum){
+			minimum = valeur_courante;
+		}
+
+	}
+	return minimum;
 }
 
 Point calcul_point_bezier2(Bezier2 b,double t){
@@ -83,7 +110,7 @@ Bezier2 approx_bezier2(TTV_Point seq,int j1,int j2){
 
 
 
-int main(){
+int tests_bezier(){
 	Bezier2 b2;
 	b2.c0=set_point(0,0);
 	b2.c1=set_point(1,2);
@@ -119,5 +146,12 @@ int main(){
 	afficher_point(b2.c1);
 	afficher_point(b2.c2);
 
+    Point p;
+    double step;
+    for(int i =1; i <= seq.nb-2 ; i++){
+        step =(double)i/(double)(seq.nb-1);
+        p = seq.tab[i];
+        printf("distance point %d : %10.3f\n", i, distance_point_bezier2(p,b2, step) );
+    }
 
 }
