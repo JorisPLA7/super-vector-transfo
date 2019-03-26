@@ -1,7 +1,9 @@
 #include "bezier.h"
 
 double distance_point_bezier2(Point P,Bezier2 B,double ti){
-return 1.;
+	//approx bezier 2
+	//distance point P avec tout les points
+	//retourner le minimum
 }
 
 Point calcul_point_bezier2(Bezier2 b,double t){
