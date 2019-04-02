@@ -1,5 +1,17 @@
 #include "bezier.h"
 
+tab_bezier2 creer_tab_bezier2(){
+	tab_bezier2 nouveau;
+	nouveau.n=0;
+	return nouveau;
+}
+
+tab_bezier3 creer_tab_bezier3(){
+	tab_bezier3 nouveau;
+	nouveau.n=0;
+	return nouveau;
+}
+
 double distance_point_bezier2(Point P,Bezier2 B,double ti){
 	
 	Point b_point = calcul_point_bezier2(B, 0.);
@@ -106,52 +118,12 @@ Bezier2 approx_bezier2(TTV_Point seq,int j1,int j2){
 	
 }
 
-
-
-
-
-int tests_bezier(){
-	Bezier2 b2;
-	b2.c0=set_point(0,0);
-	b2.c1=set_point(1,2);
-	b2.c2=set_point(4,0);
-	afficher_point(calcul_point_bezier2(b2,0));
-	afficher_point(calcul_point_bezier2(b2,0.5));
-
-	Bezier3 b3=conversion_b2_b3(b2);
-	printf("\nApres conversion en b3 : (c0,c1,c2,c3)\n");
-	
-	afficher_point(b3.c0);
-	afficher_point(b3.c1);
-	afficher_point(b3.c2);
-	afficher_point(b3.c3);
-	printf("\nCalcul des points pour b3 :\n");
-	afficher_point(calcul_point_bezier3(b3,0));
-	afficher_point(calcul_point_bezier3(b3,0.5));
-
-	TTV_Point seq = creer_TTV_point_vide();
-	seq = ajouter_element_TTV_Point(seq,set_point(0,0));
-	seq =ajouter_element_TTV_Point(seq,set_point(1,0));
-	seq =ajouter_element_TTV_Point(seq,set_point(1,1));
-	seq =ajouter_element_TTV_Point(seq,set_point(1,2));
-	seq =ajouter_element_TTV_Point(seq,set_point(2,2));
-	seq =ajouter_element_TTV_Point(seq,set_point(3,2));
-	seq =ajouter_element_TTV_Point(seq,set_point(3,3));
-	seq =ajouter_element_TTV_Point(seq,set_point(4,3));
-	seq =ajouter_element_TTV_Point(seq,set_point(5,3));
-
-	b2=approx_bezier2(seq,0,8);
-	printf("Affichage des points de la courbe approx : (c0,c1,c2)\n");
-	afficher_point(b2.c0);
-	afficher_point(b2.c1);
-	afficher_point(b2.c2);
-
-    Point p;
-    double step;
-    for(int i =1; i <= seq.nb-2 ; i++){
-        step =(double)i/(double)(seq.nb-1);
-        p = seq.tab[i];
-        printf("distance point %d : %10.3f\n", i, distance_point_bezier2(p,b2, step) );
-    }
+void ecrire_countour_bezier2(tab_bezier2 tab2,FILE* sortie,int H){
+	for (int j=0; j<tab2.n; j++){
+		    fprintf(sortie, "%10.3f %10.3f moveto %10.3f %10.3f %10.3f %10.3f %10.3f %10.3f curveto\n0 setlinewidth stroke\n",tab2.tab[j].c0.x,tab2.tab[j].c0.y, tab2.tab[j].c1.x,tab2.tab[j].c1.y,tab2.tab[j].c1.x,tab2.tab[j].c1.y,tab2.tab[j].c2.x,tab2.tab[j].c2.y);
+	}
 
 }
+
+
+

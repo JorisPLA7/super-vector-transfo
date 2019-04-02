@@ -1,10 +1,5 @@
 #include "simplif_douglas_bezier.h"
 
-tab_bezier2 creer_tab_bezier2(){
-	tab_bezier2 nouveau;
-	nouveau.n=0;
-	return nouveau;
-}
 
 tab_bezier2 concatener_bezier2_struct(tab_bezier2 L1, tab_bezier2 L2) {
 	tab_bezier2 B=L1;
@@ -17,12 +12,6 @@ tab_bezier2 concatener_bezier2_struct(tab_bezier2 L1, tab_bezier2 L2) {
 
 
 
-tab_bezier3 creer_tab_bezier3(){
-	tab_bezier3 nouveau;
-	nouveau.n=0;
-	return nouveau;
-}
-
 
 tab_bezier2 simplification_douglas_peucker_bezier2(TTV_Point C,int j1, int j2, double d){
 	int n = j2-j1;
@@ -34,7 +23,7 @@ tab_bezier2 simplification_douglas_peucker_bezier2(TTV_Point C,int j1, int j2, d
 	int dmax=0;
 	int k = j1; 
 	
-	for (int j=j1+1;j1<=j2;j1++){
+	for (int j=j1+1;j<=j2;j++){
 		int i=j-j1;
 		double ti=(double)i/(double)n;
 		double dj=distance_point_bezier2(C.tab[j],B,ti);
