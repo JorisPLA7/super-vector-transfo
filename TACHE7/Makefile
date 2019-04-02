@@ -5,7 +5,7 @@
 # utilisation des variables internes $< $@ $*
 # $@ : correspond au nom de la cible
 # $< : correspond au nom de la premiere dependance
-# $^ : correspond à toutes les dépendances
+# $^ : correspond ï¿½ toutes les dï¿½pendances
 # $* : correspond au nom du fichier sans extension 
 #       (dans les regles generiques uniquement)
 #############################################################################
@@ -27,7 +27,7 @@ INCDIR = .
 # chemin d'acces aux librairies (binaires)
 LIBDIR = .
 
-# options pour l'édition des liens
+# options pour l'ï¿½dition des liens
 LDOPTS = -L$(LIBDIR) -lm
 
 # options pour la recherche des fichiers .o et .h
@@ -45,7 +45,7 @@ EXECUTABLES = test_image_pbm test_geom2d t5_eps_multi_contours t6_simplification
 #############################################################################
 
 ########################################################
-# la règle par défaut
+# la rï¿½gle par dï¿½faut
 all : $(EXECUTABLES)
 
 ########################################################
@@ -199,6 +199,6 @@ test_geom2d : test_geom2d.o geom2d.o
 	$(CC) $^ $(LDOPTS) -o $@
 
 
-# regle pour "nettoyer" le répertoire
+# regle pour "nettoyer" le rï¿½pertoire
 clean:
 	rm -fR $(EXECUTABLES) *.o 
