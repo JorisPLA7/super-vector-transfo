@@ -37,7 +37,7 @@ INCLUDEOPTS = -I$(INCDIR)
 COMPILOPTS = -g -Wall $(INCLUDEOPTS)
 
 # liste des executables
-EXECUTABLES = test_image_pbm test_geom2d t5_eps_multi_contours t6_simplification bezier t7_simplif_douglas_bezier
+EXECUTABLES = test_image_pbm test_geom2d t5_eps_multi_contours t6_simplification t7_simplif_douglas_bezier
 
 
 #############################################################################
@@ -63,7 +63,7 @@ all : $(EXECUTABLES)
 ########################################################
 # regles explicites de compilation separee de modules
 # n'ayant pas de fichier .h ET/OU dependant d'autres modules
-t7_simplif_douglas_bezier.o : t7_simplif_douglas_bezier.c simplif_douglas_bezier.h geom2d.h TTV.h bezier.h
+t7_simplif_douglas_bezier.o : t7_simplif_douglas_bezier.c simplif_douglas_bezier.h geom2d.h TTV.h bezier.h types_macros.h image_pbm.h directX12.h trouver_vect.h
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Compilation du module t7_simplif_douglas_bezier"
@@ -77,7 +77,7 @@ simplif_douglas_bezier.o : simplif_douglas_bezier.c simplif_douglas_bezier.h geo
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $<
 
-bezier.o : bezier.c bezier.h geom2d.h TTV.h	
+bezier.o : bezier.c bezier.h geom2d.h TTV.h
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Compilation du module bezier"
@@ -156,19 +156,19 @@ test_geom2d.o : test_geom2d.c geom2d.h
 		
 ########################################################
 # regles explicites de creation des executables
-t7_simplif_douglas_bezier : t7_simplif_douglas_bezier.o simplif_douglas_bezier.o bezier.o geom2d.o TTV.o
+t7_simplif_douglas_bezier : t7_simplif_douglas_bezier.o simplif_douglas_bezier.o bezier.o geom2d.o TTV.o image_pbm.o directX12.o trouver_vect.o
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Creation de l'executable "$@
 	@echo "---------------------------------------------"
 	$(CC) $^ $(LDOPTS) -o $@
 
-bezier : bezier.o geom2d.o TTV.o
-	@echo ""
-	@echo "---------------------------------------------"
-	@echo "Creation de l'executable "$@
-	@echo "---------------------------------------------"
-	$(CC) $^ $(LDOPTS) -o $@
+#bezier : bezier.o geom2d.o TTV.o simplif_douglas_bezier.o
+#	@echo ""
+#	@echo "---------------------------------------------"
+#	@echo "Creation de l'executable "$@
+#	@echo "---------------------------------------------"
+#	$(CC) $^ $(LDOPTS) -o $@
 
 t6_simplification : t6_simplification.o trouver_vect.o image_pbm.o geom2d.o TTV.o directX12.o simplification_douglas.o
 	@echo ""
